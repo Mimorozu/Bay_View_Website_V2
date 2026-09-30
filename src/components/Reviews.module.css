@@ -1,0 +1,212 @@
+.section {
+  padding: 5rem 1.5rem;
+  background: oklch(97.5% 0.018 92);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 4rem;
+  }
+}
+
+.reviewsTitle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .reviewsTitle {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 1.4rem + 2.75vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.subtitle {
+  max-width: 26rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+
+.titleSpacer {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .titleSpacer {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  margin-inline: -1.5rem;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+@media (min-width: 768px) {
+  .marquee {
+    margin-inline: -4rem;
+  }
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  padding-inline: 1.5rem;
+  animation: reviews-scroll 48s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .track {
+    padding-inline: 4rem;
+  }
+}
+
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
+
+@keyframes reviews-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.card {
+  position: relative;
+  flex-shrink: 0;
+  width: min(22rem, 82vw);
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid oklch(0% 0 0 / 10%);
+  background: oklch(100% 0 0);
+  box-shadow: 0 1px 2px oklch(0% 0 0 / 8%);
+  font-family: var(--font-sans);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: oklch(100% 0 0);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: oklch(20% 0 0);
+}
+
+.subline {
+  font-size: 0.75rem;
+  color: oklch(45% 0 0);
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.0625rem;
+  color: oklch(77% 0.16 75);
+}
+
+.star {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+}
+
+.date {
+  font-size: 0.8125rem;
+  color: oklch(45% 0 0);
+}
+
+.text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: oklch(20% 0 0);
+}

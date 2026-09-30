@@ -1,0 +1,1 @@
+export const amenities = ["Free WiFi", "Self Contained Kitchen", "En-suite With Shower", "Free Parking", ];
